@@ -1,8 +1,10 @@
 
 
 node_modules/
-videos/
-screenshots/
+
 /cypress/results/*
-/reports
+reports/
+screenshots/
+videos/
+logs/
 
