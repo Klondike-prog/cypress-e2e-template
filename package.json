@@ -1,0 +1,26 @@
+{
+  "name": "cypress-e2e-template",
+  "version": "1.0.0",
+  "main": "index.js",
+"scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Klondike-prog/cypress-e2e-template.git"
+  },
+  "keywords": [
+    "cypress"
+  ],
+  "author": "Bondane Catalin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Klondike-prog/cypress-e2e-template/issues"
+  },
+  "homepage": "https://github.com/Klondike-prog/cypress-e2e-template#readme",
+  "description": "",
+  "dependencies": {
+    "cypress": "^15.5.0"
+  }
+}
