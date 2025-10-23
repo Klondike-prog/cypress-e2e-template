@@ -1,14 +1,14 @@
 
-import Header from '../components/header';
-import Logger from '../utils/logger';
+import NavMenu from '../components/NavMenu';
+
 
 export class BasePage {
     elements = {
 
         pageTitle: () => cy.get('page-title'),
     }
-    get header() {
-        return new Header()
+    get navMenu() {
+        return new NavMenu()
     }
 
     getByDataTestId(dataTestId) {

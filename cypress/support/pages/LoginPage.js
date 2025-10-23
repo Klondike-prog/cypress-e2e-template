@@ -1,6 +1,5 @@
 
 import { BasePage } from './BasePage';
-import Logger from '../utils/logger';
 
 class LoginPage extends BasePage {
 
@@ -33,9 +32,9 @@ class LoginPage extends BasePage {
         this.assertUserMenu()
 
     }
-    assertUserMenu() {
+    assertUserMenu(firstName, lastName) {
+        const fullName = firstName + ' ' + lastName
         this.header.elements.userMenu.should('be.visible')
-        this.header.elements.userMenu.should('contain.text', 'John Doe')
-        // Logger.passed(`User Menu has been found`)
+        this.header.elements.userMenu.should('contain.text', fullName)
     }
 } export const loginPage = new LoginPage();

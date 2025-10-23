@@ -8,16 +8,19 @@ const elements = {
     buttonSubmit: () => cy.get('[data-test="login-submit"]'),
 }
 
-Cypress.Commands.add('customerSession', () => {
+Cypress.Commands.add('userSession', () => {
     registerUserApi(user)
-    cy.session('user',() => {
-        cy.visit(`${Cypress.env('baseUrl')}/auth/login`)
-        elements.inputEmail().type(user.email)
-        elements.inputPassword().type(user.password)
-        elements.buttonSubmit().click()
-        cy.wait(5000)
-        // cy.url().should('contain', '/login-successful')
-    }, {
-        cacheAcrossSpecs: true
-    })
-})
+    cy.session(
+        [user.email, user.password], 
+        () => {
+            cy.visit(`${Cypress.env('baseUrl')}/auth/login`);
+            elements.inputEmail().type(user.email);
+            elements.inputPassword().type(user.password);
+            elements.buttonSubmit().click();
+            cy.url().should('not.include', '/auth/login');
+        },
+        {
+            cacheAcrossSpecs: true,
+        }
+    );
+});

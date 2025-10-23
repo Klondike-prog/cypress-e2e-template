@@ -12,6 +12,6 @@ export function generateRegisterUser() {
     country: faker.location.countryCode(),
     phoneNumber: faker.string.numeric(10),
     email: faker.internet.email().toLowerCase(),
-    password: faker.internet.password({ length: 12}) + "*",
+    password: faker.internet.password({ length: 12}) + "*"+"4",
   };
 }
